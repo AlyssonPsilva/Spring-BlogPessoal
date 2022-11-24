@@ -36,4 +36,9 @@ public class PostagemController {
     public ResponseEntity <Postagem> post(@Valid @RequestBody Postagem postagem){
         return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
     }
+    @PutMapping
+    public ResponseEntity <Postagem> put(@Valid @RequestBody Postagem postagem){
+        return postagemRepository.findById(postagem.getId()).map(resposta ->ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem)))
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    }
 }

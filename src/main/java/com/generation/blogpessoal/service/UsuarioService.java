@@ -1,5 +1,6 @@
 package com.generation.blogpessoal.service;
 
+import com.generation.blogpessoal.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

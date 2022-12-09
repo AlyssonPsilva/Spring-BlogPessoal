@@ -1,4 +1,4 @@
-package controller;
+package com.generation.blogpessoal.controller;
 
 import com.generation.blogpessoal.model.Usuario;
 import com.generation.blogpessoal.model.UsuarioLogin;
@@ -88,7 +88,7 @@ public class UsuarioControllerTest {
 
 
         ResponseEntity<Usuario> corpoResposta = testRestTemplate
-                .withBasicAuth("root", "rootroot")
+                .withBasicAuth("root@root.com", "rootroot")
                 .exchange("/usuarios/atualizar", HttpMethod.PUT, corpoRequisicao, Usuario.class);
 
         assertEquals(HttpStatus.OK, corpoResposta.getStatusCode());
@@ -111,7 +111,7 @@ public class UsuarioControllerTest {
 
 
         ResponseEntity<String> resposta = testRestTemplate
-                .withBasicAuth("root", "rootroot")
+                .withBasicAuth("root@root.com", "rootroot")
                 .exchange("/usuarios/all", HttpMethod.GET, null, String.class);
 
         assertEquals(HttpStatus.OK, resposta.getStatusCode());

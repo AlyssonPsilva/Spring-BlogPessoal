@@ -1,5 +1,7 @@
 package com.generation.blogpessoal.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -17,6 +19,7 @@ public class Usuario {
     private String nome;
 
     @Email
+    @Schema(example = "email@email.com.br")
     private String usuario;
 
     @NotBlank
